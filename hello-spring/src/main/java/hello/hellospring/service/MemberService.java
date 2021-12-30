@@ -3,6 +3,8 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,11 +13,13 @@ import java.util.Optional;
  * repository는 단순히 저장소에 넣었다 뺐다 하는 역할
  * service class는 business에 의존적으로 설계
  * */
+//@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    //memoryMemberRepository를 new로 직접적으로 생성하는것이 아닌 외부에서 넣어줌 (DI)
+    //memoryMemberRepository를 new로 직접적으로 생성하는것이 아닌 스프링 컨테이너에서 찾아서 넣어줌 (DI)
+//  @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

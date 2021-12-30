@@ -1,9 +1,11 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
     //동시성 문제가 있으나 예제이므로 간단하게 넘어간다..
     //static은 class에서 작동하는거라 문제가 없으나 static이 없이 instance에서 작동할 경우에는..
