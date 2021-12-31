@@ -5,6 +5,7 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,7 @@ import java.util.Optional;
  * service class는 business에 의존적으로 설계
  * */
 //@Service
+@Transactional //jpa사용을 하려면 항상 필요하다.
 public class MemberService {
 
     private final MemberRepository memberRepository;
